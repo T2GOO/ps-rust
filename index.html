@@ -2,6 +2,18 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
+    
+<script type="module">
+import init, * as bindings from '/ps-rust/lime-a5c50e2c48446839.js';
+const wasm = await init({ module_or_path: '/ps-rust/lime-a5c50e2c48446839_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
     <title>Lime</title>
     <style>
         html, body {
@@ -16,19 +28,8 @@
             height: 100%;
         }
     </style>
-<link rel="modulepreload" href="/ps-rust/lime-a5c50e2c48446839.js" crossorigin="anonymous" integrity="sha384-uqXEC4AhLg4yMOJuvJ6+74B8Slpu/k8gf2/Ka1sxBC0tirUnXzbMGIc65sQ7qlpT"><link rel="preload" href="/ps-rust/lime-a5c50e2c48446839_bg.wasm" crossorigin="anonymous" integrity="sha384-Mn4tCHXJvdCI+3cPvRwp4OJcPOa1LHAy2Y5i+cWMqoRAsLP7upajR9rQb3v/g++h" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/ps-rust/lime-a5c50e2c48446839.js" crossorigin="anonymous" integrity="sha384-uqXEC4AhLg4yMOJuvJ6+74B8Slpu/k8gf2/Ka1sxBC0tirUnXzbMGIc65sQ7qlpT"><link rel="preload" href="/ps-rust/lime-a5c50e2c48446839_bg.wasm" crossorigin="anonymous" integrity="sha384-JB8f1jKJqBDb40LphTGxLylPc9l2utN9MPzvMt9mIHxkjCwrdRQd2AAh6ctKIgg7" as="fetch" type="application/wasm"></head>
 <body>
     <canvas id="egui_canvas" style="position:absolute; top:0; left:0; width:100%; height:100%;"></canvas>
-
-<script type="module">
-import init, * as bindings from '/ps-rust/lime-a5c50e2c48446839.js';
-const wasm = await init({ module_or_path: '/ps-rust/lime-a5c50e2c48446839_bg.wasm' });
-
-
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script></body>
+</body>
 </html>
