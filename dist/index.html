@@ -2,6 +2,18 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
+    
+<script type="module">
+import init, * as bindings from '/lime-f0fb200ebf60dde5.js';
+const wasm = await init({ module_or_path: '/lime-f0fb200ebf60dde5_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
     <title>Lime</title>
     <style>
         html, body {
@@ -19,19 +31,7 @@
 <link rel="modulepreload" href="/lime-f0fb200ebf60dde5.js" crossorigin="anonymous" integrity="sha384-RtNP0HKHPrnbLk/chNBK92z7nKCqEAxpyuVWK04+je7h1YWlW/my2E/3Cvt79uAr"><link rel="preload" href="/lime-f0fb200ebf60dde5_bg.wasm" crossorigin="anonymous" integrity="sha384-8UMB1MUXTW+Gbp4iK8Eps+YSg5ZwQm7ejhuBTiHDZSDvJqgQQ0RqQj5uPF57rWVE" as="fetch" type="application/wasm"></head>
 <body>
     <canvas id="egui_canvas" style="position:absolute; top:0; left:0; width:100%; height:100%;"></canvas>
-    <!-- Trunk automaticaaly injects the generated JS -->
-
-<script type="module">
-import init, * as bindings from '/lime-f0fb200ebf60dde5.js';
-const wasm = await init({ module_or_path: '/lime-f0fb200ebf60dde5_bg.wasm' });
-
-
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script><script>"use strict";
+<script>"use strict";
 
 (function () {
 
