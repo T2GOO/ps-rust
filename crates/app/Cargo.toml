@@ -1,0 +1,11 @@
+[package]
+name = "lime-app"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+lime-core = { path = "../core" }
+eframe.workspace = true
+egui.workspace = true
+wasm-bindgen-futures.workspace = true
+web-sys.workspace = true

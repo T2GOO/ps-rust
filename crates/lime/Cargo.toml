@@ -1,0 +1,11 @@
+[package]
+name = "lime"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "lime"
+path = "src/main.rs"
+
+[dependencies]
+lime-app = { path = "../app" }
